@@ -1,11 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Blog Tech</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0f0f13;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    /* Banner / Header */
+    .hero {
+      position: relative;
+      height: 380px;
+      background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      filter: brightness(0.85) contrast(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00f0ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #b0b0c0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Navegação */
+    nav {
+      background: rgba(15, 15, 19, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #2a2a35;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+      padding: 18px 20px;
+    }
+
+    nav a {
+      color: #c0c0d0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f0ff;
+    }
+
+    /* Conteúdo principal */
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+    }
+
+    .posts article {
+      background: #16161f;
+      border: 1px solid #2a2a35;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 30px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .posts article:hover {
+      transform: translateY(-4px);
+      border-color: #00f0ff55;
+    }
+
+    .posts h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .posts h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .posts h2 a:hover {
+      color: #00f0ff;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .posts p {
+      color: #b0b0c0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 90px;
+      height: fit-content;
+    }
+
+    .widget {
+      background: #16161f;
+      border: 1px solid #2a2a35;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 25px;
+    }
+
+    .widget h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #00f0ff;
+    }
+
+    .widget ul {
+      list-style: none;
+    }
+
+    .widget li {
+      margin-bottom: 10px;
+    }
+
+    .widget a {
+      color: #c0c0d0;
+      text-decoration: none;
+    }
+
+    .widget a:hover {
+      color: #a855f7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a35;
+      color: #666;
+      margin-top: 60px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-    joh
+
+  <!-- Banner -->
+  <header class="hero">
+    <!-- Substitua a src pela URL da imagem gerada ou salve localmente -->
+    <img src="sua-imagem-tech.jpg" alt="Banner Tech Blog">
+    <div class="hero-content">
+      <h1>Meu Blog Tech</h1>
+      <p>Tecnologia, programação, IA e o futuro digital</p>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Artigos</a></li>
+      <li><a href="#">Tutoriais</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <main class="posts">
+      <article>
+        <h2><a href="#">Como a IA está mudando o desenvolvimento web em 2026</a></h2>
+        <div class="meta">24 Ago 2026 · 8 min de leitura</div>
+        <p>Descubra as ferramentas e frameworks que estão dominando o mercado e como você pode se preparar...</p>
+      </article>
+
+      <article>
+        <h2><a href="#">Guia completo de CSS moderno (Grid + Container Queries)</a></h2>
+        <div class="meta">20 Ago 2026 · 12 min de leitura</div>
+        <p>Chega de layouts quebrados. Aprenda as técnicas mais atuais para criar interfaces responsivas...</p>
+      </article>
+
+      <article>
+        <h2><a href="#">Os melhores editores de código em 2026</a></h2>
+        <div class="meta">15 Ago 2026 · 6 min de leitura</div>
+        <p>VS Code ainda reina? Ou as novas opções com IA nativa estão ganhando espaço?</p>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="#">Inteligência Artificial</a></li>
+          <li><a href="#">Frontend</a></li>
+          <li><a href="#">Backend</a></li>
+          <li><a href="#">DevOps</a></li>
+          <li><a href="#">Carreira Tech</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Mais lidos</h3>
+        <ul>
+          <li><a href="#">Prompt Engineering avançado</a></li>
+          <li><a href="#">Tailwind vs CSS puro em 2026</a></li>
+          <li><a href="#">Como monetizar um blog tech</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>© 2026 Meu Blog Tech · Feito com ❤️ e muito café</p>
+  </footer>
+
 </body>
 </html>
